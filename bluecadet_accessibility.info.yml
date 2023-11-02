@@ -10,3 +10,9 @@ dependencies:
   - views_ajax_history:views_ajax_history
 
 configure: null
+
+
+# Information added by packaging script on 2023-11-02
+version: 1.0.0-alpha1
+project: bluecadet_accessibility
+datestamp: 1698947490115
