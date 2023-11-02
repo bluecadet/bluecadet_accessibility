@@ -1,0 +1,6 @@
+views.display_extender.ajax_ally_option:
+  type: views_display_extender
+  mapping:
+    enable_ally:
+      type: boolean
+      label: 'Enable A11y'

@@ -1,0 +1,8 @@
+viewsAjaxA11y:
+  version: 1.0
+  js:
+    js/viewsAjaxA11y.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

@@ -1,0 +1,12 @@
+name: Bluecadet Accessibility
+type: module
+description: 'Funcs and methods for aiding in site accessibility.'
+core_version_requirement: ^9 || ^10
+
+package: Bluecadet
+
+dependencies:
+  - core:views
+  - views_ajax_history:views_ajax_history
+
+configure: null

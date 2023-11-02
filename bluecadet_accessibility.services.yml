@@ -1,0 +1,5 @@
+services:
+  bluecadet_accessibility.view_ajax_subscriber:
+    class: Drupal\bluecadet_accessibility\EventSubscriber\ViewsAjaxResponseSubscriber
+    tags:
+      - { name: event_subscriber }
