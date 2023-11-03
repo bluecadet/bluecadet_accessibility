@@ -59,3 +59,13 @@ CHANGELOG
 # 1.x
 
 - Adds Drupal Views Display Extender for enhanced accessibility.
+
+<br>
+<br>
+<br>
+
+## Proudly developed @ Bluecadet
+
+<p style="background-color: white; padding: 20px">
+  <a href="https://www.bluecadet.com/"><img style="max-width: 50%; min-width: 300px;" src="https://www.bluecadet.com/wp-content/themes/bluecadet-2018/images/logo/logo-bluecadet-black.svg" alt="Bluecadet"></a>
+</p>
