@@ -74,9 +74,6 @@ jobs:
   #         ./vendor/bin/phpcs -s --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt --ignore=node_modules,bower_components,vendor,dist --exclude=Drupal.InfoFiles.AutoAddedKeys --colors ./modules/bluecadet_public_files
   #         ./vendor/bin/phpcs -s --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt --ignore=node_modules,bower_components,vendor,dist --exclude=Drupal.InfoFiles.AutoAddedKeys --colors ./modules/bluecadet_public_files
 
-
-
-
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -86,7 +83,7 @@ jobs:
         php-version: ['7.4', '8.0', '8.1', '8.2']
         mariadb-version: ['10.4', '10.6']
         exclude:
-        -
+          -
             drupal-core: '9.4.x'
             php-version: '8.2'
             mariadb-version: '10.4'
