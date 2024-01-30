@@ -20,16 +20,23 @@ use Drupal\views\ViewExecutable;
  * Add instance dates to view results.
  */
 function bluecadet_accessibility_views_pre_render(ViewExecutable $view) {
-
+  // Grab the current view display.
   $display = $view->getDisplay();
 
-  // Add library to views with exposed forms.
-  // if (!empty($view->exposed_widgets)) {
-  //   $view->element['#attached']['library'][] = 'bluecadet_accessibility/views-exposed-forms';
-  // }
-
+  // Grab the options set on the view display.
   $display_extenders_options = $view->display_handler->getOption('display_extenders');
-  if (($view->ajaxEnabled() && (isset($display_extenders_options['ajax_ally_option']['enable_ally']) && $display_extenders_options['ajax_ally_option']['enable_ally'] == TRUE)) && empty($view->is_attachment) && empty($view->live_preview)) {
-    $view->element['#attached']['library'][] = 'bluecadet_accessibility/viewsAjaxA11y';
+  if (
+    (
+      $view->ajaxEnabled() &&
+      (
+        isset($display_extenders_options['ajax_ally_option']['enable_ally']) &&
+        $display_extenders_options['ajax_ally_option']['enable_ally'] == TRUE
+      )
+    ) &&
+    empty($view->is_attachment) && empty($view->live_preview)
+    ) {
+
+      // Attach the library.
+      $view->element['#attached']['library'][] = 'bluecadet_accessibility/viewsAjaxA11y';
   }
 }

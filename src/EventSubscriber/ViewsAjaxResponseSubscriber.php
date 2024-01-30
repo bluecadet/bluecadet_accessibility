@@ -3,9 +3,9 @@
 namespace Drupal\bluecadet_accessibility\EventSubscriber;
 
 use Drupal\bluecadet_accessibility\Ajax\ViewsAjaxReFocusCommand;
-use Drupal\views\Ajax\ViewAjaxResponse;
 use Drupal\Core\Ajax\AnnounceCommand;
 use Drupal\Core\Ajax\FocusFirstCommand;
+use Drupal\views\Ajax\ViewAjaxResponse;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -35,6 +35,7 @@ class ViewsAjaxResponseSubscriber implements EventSubscriberInterface {
     // Only act on a Views Ajax Response.
     if ($response instanceof ViewAjaxResponse) {
       $view = $response->getView();
+      // Assuming typical view classes here.
       $view_selector = '.view.view-id-' . $view->id() . '.view-display-id-' . $view->current_display;
       $commands = &$response->getCommands();
 
