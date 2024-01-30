@@ -46,7 +46,7 @@ class ViewsAjaxResponseSubscriber implements EventSubscriberInterface {
         )
         && empty($view->is_attachment) && empty($view->live_preview)
       ) {
-        // Disable the default behavior of visually scrolling 
+        // Disable the default behavior of visually scrolling
         // on view refreshes caused by form changes or pagination.
         foreach ($commands as &$command) {
           if (isset($command['command']) && $command['command'] === 'viewsScrollTop') {
