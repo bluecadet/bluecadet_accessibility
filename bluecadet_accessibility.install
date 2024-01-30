@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Implements hook_install().
+ */
+
+/**
  * Implements hook_install().
  */
 function bluecadet_accessibility_install() {
@@ -13,7 +18,7 @@ function bluecadet_accessibility_install() {
 function bluecadet_accessibility_enable_plugin() {
   // Enable ajax_ally_option plugin.
   $config = \Drupal::service('config.factory')->getEditable('views.settings');
-  $display_extenders = $config->get('display_extenders') ?: array();
+  $display_extenders = $config->get('display_extenders') ?: [];
   $display_extenders[] = 'ajax_ally_option';
   $config->set('display_extenders', $display_extenders);
   $config->save();
@@ -25,10 +30,10 @@ function bluecadet_accessibility_enable_plugin() {
 function bluecadet_accessibility_uninstall() {
   // Disable ajax_ally_option plugin.
   $config = \Drupal::service('config.factory')->getEditable('views.settings');
-  $display_extenders = $config->get('display_extenders') ?: array();
+  $display_extenders = $config->get('display_extenders') ?: [];
 
   $key = array_search('ajax_ally_option', $display_extenders);
-  if ($key!== FALSE) {
+  if ($key !== FALSE) {
     unset($display_extenders[$key]);
     $config->set('display_extenders', $display_extenders);
     $config->save();

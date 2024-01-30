@@ -8,18 +8,12 @@
 use Drupal\views\ViewExecutable;
 
 /**
- * Implements hook_page_attachments().
- */
-// function bluecadet_accessibility_page_attachments(array &$attachments) {
-//   $attachments['#attached']['library'][] = 'bluecadet_accessibility/bluecadet_accessibility';
-// }
-
-/**
  * Implements hook_form_views_pre_render().
  *
  * Add instance dates to view results.
  */
-function bluecadet_accessibility_views_pre_render(ViewExecutable $view) {
+function bluecadet_accessibility_views_pre_render(ViewExecutable $view)
+{
   // Grab the current view display.
   $display = $view->getDisplay();
 
@@ -34,9 +28,9 @@ function bluecadet_accessibility_views_pre_render(ViewExecutable $view) {
       )
     ) &&
     empty($view->is_attachment) && empty($view->live_preview)
-    ) {
+  ) {
 
-      // Attach the library.
-      $view->element['#attached']['library'][] = 'bluecadet_accessibility/viewsAjaxA11y';
+    // Attach the library.
+    $view->element['#attached']['library'][] = 'bluecadet_accessibility/viewsAjaxA11y';
   }
 }

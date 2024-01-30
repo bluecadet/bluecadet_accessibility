@@ -2,8 +2,8 @@
 
 namespace Drupal\bluecadet_accessibility\Plugin\views\display_extender;
 
-use Drupal\views\Plugin\views\display_extender\DisplayExtenderPluginBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Plugin\views\display_extender\DisplayExtenderPluginBase;
 
 /**
  * Ajax AJAX A11y display extender plugin.
