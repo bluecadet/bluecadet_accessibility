@@ -12,8 +12,7 @@ use Drupal\views\ViewExecutable;
  *
  * Add instance dates to view results.
  */
-function bluecadet_accessibility_views_pre_render(ViewExecutable $view)
-{
+function bluecadet_accessibility_views_pre_render(ViewExecutable $view) {
   // Grab the current view display.
   $display = $view->getDisplay();
 

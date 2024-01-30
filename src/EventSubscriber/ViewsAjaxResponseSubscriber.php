@@ -12,14 +12,12 @@ use Symfony\Component\HttpKernel\KernelEvents;
 /**
  * Alter a Views Ajax Response.
  */
-class ViewsAjaxResponseSubscriber implements EventSubscriberInterface
-{
+class ViewsAjaxResponseSubscriber implements EventSubscriberInterface {
 
   /**
    * {@inheritdoc}
    */
-  public static function getSubscribedEvents()
-  {
+  public static function getSubscribedEvents() {
     $events[KernelEvents::RESPONSE][] = ['onResponse'];
     return $events;
   }
@@ -30,8 +28,7 @@ class ViewsAjaxResponseSubscriber implements EventSubscriberInterface
    * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
    *   The event process.
    */
-  public function onResponse(FilterResponseEvent $event)
-  {
+  public function onResponse(FilterResponseEvent $event) {
     $response = $event->getResponse();
 
     // Only act on a Views Ajax Response.
@@ -66,11 +63,13 @@ class ViewsAjaxResponseSubscriber implements EventSubscriberInterface
         if ($result_count > 0) {
           // @todo variablise this in a settings page.
           $response->addCommand(new FocusFirstCommand($view_selector . ' .view-content ul li'));
-        } else {
+        } 
+        else {
           // @todo variablise this in a settings page.
           $response->addCommand(new FocusFirstCommand($view_selector . ' .view-empty [tabindex="0"]'));
         }
       }
     }
   }
+
 }
