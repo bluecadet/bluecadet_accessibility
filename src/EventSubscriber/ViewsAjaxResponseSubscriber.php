@@ -4,6 +4,7 @@ namespace Drupal\bluecadet_accessibility\EventSubscriber;
 
 use Drupal\Core\Ajax\AnnounceCommand;
 use Drupal\Core\Ajax\FocusFirstCommand;
+use Drupal\Core\StringTranslation\TranslationManager;
 use Drupal\views\Ajax\ViewAjaxResponse;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
@@ -57,7 +58,7 @@ class ViewsAjaxResponseSubscriber implements EventSubscriberInterface {
         // Add in Announce for number of results.
         $result_count = count($view->result);
         // @todo variablise this in a settings page.
-        $msg = \Drupal::translation()->formatPlural($result_count, '1 result loaded.', '@count results loaded.');
+        $msg = new translation()->formatPlural($result_count, '1 result loaded.', '@count results loaded.');
         $response->addCommand(new AnnounceCommand($msg, 'assertive'));
 
         // Add in focus command.
