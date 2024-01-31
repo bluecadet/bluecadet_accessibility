@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
  * Alter a Views Ajax Response.
  */
 class ViewsAjaxResponseSubscriber implements EventSubscriberInterface {
-  
+
   use StringTranslationTrait;
 
   /**
