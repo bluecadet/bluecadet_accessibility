@@ -13,7 +13,7 @@ class ViewsAjaxReFocusCommand implements CommandInterface {
   /**
    * Drupal view.
    *
-   * @var Drupal\views\ViewExecutable
+   * @var \Drupal\views\ViewExecutable
    */
   public $view;
 
