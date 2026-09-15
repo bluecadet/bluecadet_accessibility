@@ -1,7 +1,7 @@
 name: Bluecadet Accessibility
 type: module
 description: 'Funcs and methods for aiding in site accessibility.'
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10.5 || ^11.2
 
 package: Bluecadet
 
