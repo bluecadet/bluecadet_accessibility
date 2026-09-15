@@ -7,7 +7,7 @@ use Drupal\Core\Ajax\FocusFirstCommand;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\views\Ajax\ViewAjaxResponse;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
@@ -28,10 +28,10 @@ class ViewsAjaxResponseSubscriber implements EventSubscriberInterface {
   /**
    * Allows us to alter the Ajax response from a view.
    *
-   * @param \Symfony\Component\HttpKernel\Event\FilterResponseEvent $event
+   * @param \Symfony\Component\HttpKernel\Event\ResponseEvent $event
    *   The event process.
    */
-  public function onResponse(FilterResponseEvent $event) {
+  public function onResponse(ResponseEvent $event) {
     $response = $event->getResponse();
 
     // Only act on a Views Ajax Response.
